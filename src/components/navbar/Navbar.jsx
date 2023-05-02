@@ -5,7 +5,7 @@ const navbar = () => {
   return (
     <div>
       <nav>
-        <a title="inicio" href="../index.html" className="logo"></a>
+        <div title="inicio"  className="logo"></div>
         <div className="containerBtnNav">
           <button id="btnOfertaHTML" className="btnNone btnNav">
             Vinos Seleccionados
@@ -15,10 +15,9 @@ const navbar = () => {
           </button>
         </div>
         <div className="containerOpcion">
-          <i className="fa-solid fa-user"></i>
 
-          <button id="btnCarritoHTML" className="btnNone" href="">
-            <i className="fa-solid fa-cart-shopping"></i>
+          <button id="btnCarritoHTML" className="btnNone btnCarrito">
+            <div className="numberCarrito">0</div>
           </button>
         </div>
       </nav>
