@@ -1,18 +1,21 @@
 import React from 'react'
 import "./Vino.css"
 
-const Vino = () => {
+
+
+const Vino = (props) => {
+  const { nombre, bodega, tipo, variedad, precio } = props.vino
   return (
     <div className='containerVino'>
         <div className="textContainer">
-          <h1>Don Valentin Lacrado</h1>
+          <h1>{nombre}</h1>
           <div className="tipoText">
-            <p>Trapiche</p>
-            <p>Lacrado</p>
-            <p>Tinto</p>
+            <p>{bodega}</p>
+            <p>{variedad}</p>
+            <p>{tipo}</p>
           </div>
           <div className="tipoText">
-            <h2>$1500</h2>
+            <h2>{precio}</h2>
             <div className="containerButton">
               <button  className="btnAgregar">-</button>
               <input  className="textboxCantidad" type="text" defaultValue={1} required />

@@ -1,0 +1,31 @@
+.btnCarrito{
+    height: 100%;
+    width: 100px;
+    background-image: url(../../../public/images/cart.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.numberCarrito{
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+    background: linear-gradient(27deg, rgba(255,206,163,1) 5%, rgba(250,233,217,1) 50%, rgba(255,206,163,1) 95%);
+    border-radius: 5px;
+    border: 2px black solid;
+}
+
+.containerOpcion{
+    width: 12%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import "./Navbar.css";
+import CartWidget from "../cartWidget/CartWidget";
 
 const navbar = () => {
   return (
@@ -14,12 +15,7 @@ const navbar = () => {
             Catalogo completo
           </button>
         </div>
-        <div className="containerOpcion">
-
-          <button id="btnCarritoHTML" className="btnNone btnCarrito">
-            <div className="numberCarrito">0</div>
-          </button>
-        </div>
+          <CartWidget />
       </nav>
       <div className="expansibleNav">
         <div className="selectNameContainer">
