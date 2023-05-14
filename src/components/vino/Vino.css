@@ -1,12 +1,12 @@
 .containerVino {
   width: 45%;
-  height: 180px;
-  border-radius: 10px;
+  height: 11rem;
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
   display: flex;
   background: linear-gradient(27deg, rgba(255,188,44,1) 10%, rgb(253, 219, 127) 50%, rgba(255,188,44,1) 90%);
   flex-direction: row;
-  margin-top: 190px;
+  margin-top: 12rem;
+  border-radius: 10px;
   margin-bottom: 10px;
   transition: height 0.4s linear, margin-top 0.4s linear, background 1s linear 0.5s;
 }
@@ -15,7 +15,7 @@
   position: absolute;
   transform: translateY(-20px) translateX(-40px);
   width: px;
-  height: 100px;
+  height: 6.25rem;
 }
 
 .textContainer {
@@ -28,7 +28,7 @@
 }
 
 .textContainer h1 {
-  font-size: 55px;
+  font-size: 3.50rem;
   font-family: Gabriola;
 }
 
@@ -63,7 +63,7 @@
 .listTipo p{
   color: rgb(87, 87, 87);
   font-family: Gabriola;
-  font-size: 20px;
+  font-size: 1.2rem;
 }
 
 p span { 
@@ -88,7 +88,7 @@ p span {
 
 .imgVino {
 
-  height: 350px;
+  height: 22rem;
   position: relative;
   display: flex;
   justify-content: center;
@@ -101,8 +101,8 @@ p span {
   background-color: transparent;
   border: 2px solid #ae8a26;
   border-radius: 5px;
-  width: 110px;
-  height: 40px;
+  width: 7rem;
+  height: 2.5rem;
   color: #ae8a26;
   transition: all .4s linear;
   cursor: pointer;
