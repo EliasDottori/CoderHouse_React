@@ -1,144 +1,121 @@
-.containerVino{
-    width: 90%;
-    height: 180px;
-    background: linear-gradient(27deg, rgba(255,206,163,1) 20%, rgba(250,233,217,1) 80%);
-    border-radius: 10px;
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    display: flex;
-    flex-direction: row;
+.containerVino {
+  width: 45%;
+  height: 180px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  display: flex;
+  background: linear-gradient(27deg, rgba(255,188,44,1) 10%, rgb(253, 219, 127) 50%, rgba(255,188,44,1) 90%);
+  flex-direction: row;
+  margin-top: 190px;
+  margin-bottom: 10px;
+  transition: height 0.4s linear, margin-top 0.4s linear, background 1s linear 0.5s;
 }
 
-.textContainer{
-    width: 70%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-direction: column;
+.uva{
+  position: absolute;
+  transform: translateY(-20px) translateX(-40px);
+  width: px;
+  height: 100px;
 }
 
-.textContainer h1{
-    font-size: 55px;
-    font-family: Gabriola;
+.textContainer {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
 }
 
-
-.tipoText{
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
+.textContainer h1 {
+  font-size: 55px;
+  font-family: Gabriola;
 }
 
-.containerSmallButton{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    
+.opac {
+  opacity: 0;
+  height: 0px;
+  transition: all 0.4s linear ;
 }
 
-.containerButton{
-    width: 25%;
-    display: flex;
-    justify-content: space-between;
-    
+.tipoText {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-left: 15px;
+
 }
 
-.btnCant{
-    font-size: 25%;
+.textDesc{
+  color: black;
 }
 
-.btnAgregar{
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid black;
-    background-color: #ffe8d3;
-    cursor: pointer;
+.listTipo{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
 }
 
-.textboxCantidad{
-    width: 50px;
-    text-align: center;
-    border-radius: 5px;
-    border: 1px solid black;
-    background-color: #ffe8d3;
+.listTipo p{
+  color: rgb(87, 87, 87);
+  font-family: Gabriola;
+  font-size: 20px;
 }
 
-.imgContainer{
-    width: 30%;
-    height: 100%;
+p span { 
+  color: black;
+  font-style: normal;
+  font-weight: bold;
 }
 
-.imgVino{
-    width: 100%;
-    height: 200%;
-    position: relative;
-    bottom: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.containerSmallButton {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
-.sectionCatalogo{
-    width: 70%;
-    margin: 0 auto;
-    height: auto;
-    display: grid;
-    margin-top: 160px;
-    gap: 160px;
-    grid-template-columns: auto auto auto auto;
-    grid-gap: 50px;
-    align-items: center;
-    justify-content: space-evenly;
-    padding-bottom: 50px;
+.imgContainer {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 
+.imgVino {
 
-.containerVinoSmall{
-    background: linear-gradient(27deg, rgba(255,206,163,1) 20%, rgba(250,233,217,1) 80%);
-    border-radius: 10px;
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    width: 260px;
-    height: 400px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.imgSmallContainer{
-    height: 50%;
-    width: 100%;
-}
-
-.imgSmallVino{
-    width: 100%;
-    height: 100%;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.textSmallContainer{
-    width: 90%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-direction: column;
-    text-align: center;
+  height: 350px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s linear;
 }
 
 
-.tipoSmallText{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
-    flex-direction: column;}
+.btnExpand {
+  background-color: transparent;
+  border: 2px solid #ae8a26;
+  border-radius: 5px;
+  width: 110px;
+  height: 40px;
+  color: #ae8a26;
+  transition: all .4s linear;
+  cursor: pointer;
+}
 
-.imagenVino{
-    width: 100px;
-    height: 350px;
-    background-image: url(../../../public/images/wine/donvalentin.png);
-    background-size: 100% 100%;
+.btnExpand:hover{
+  background-color: #ae8a26;
+  color: white;
+}
+
+.containerTitle {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
 }

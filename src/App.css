@@ -6,6 +6,9 @@
   font-family: comfortaa;
 }
 
+.containerGral{
+  scroll-snap-type: y mandatory;
+}
 /* .carga {
   position: absolute;
   margin: 0;

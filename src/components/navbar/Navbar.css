@@ -5,7 +5,7 @@ nav{
     padding: 10px;
     height: 100px;
     width: 100%;
-    background: linear-gradient(27deg, rgba(255,206,163,1) 5%, rgba(250,233,217,1) 50%, rgba(255,206,163,1) 95%);
+    background: linear-gradient(27deg, rgba(255,188,44,1) 10%, rgb(253, 219, 127) 50%, rgba(255,188,44,1) 90%);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -64,7 +64,7 @@ i{
 
 .expansibleNav{
     height: 50px;
-    background: linear-gradient(27deg, rgba(255,206,163,1) 5%, rgba(250,233,217,1) 50%, rgba(255,206,163,1) 95%);
+    background-color:#FFE9AB;
     width: 100%;
     position: fixed;
     top: 100px;

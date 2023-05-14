@@ -1,22 +1,21 @@
-.fondoMadera{
-    width: 100%;
-    height: 100%;
-    background-image: url(../../../public/images/4.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+.fondoMadera {
+  width: 100%;
+  height: 100%;
+  scroll-snap-align: start;
+  
+  background-color: #ffe9ab;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
-.sectionOferta{
-    width: 70%;
-    margin: 0 auto;
-    height: auto;
-    display: flex;
-    margin-top: 150px;
-    gap: 200px;
-    justify-content: space-around;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 180px;
+.sectionOferta {
+  width: 85%;
+  margin: 0 auto;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding-top: 180px;
 }
