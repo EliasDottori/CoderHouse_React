@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "id": "1",
     "nombre": "Iscay",
     "bodega": "Trapiche",
     "tipo": "Tinto",
@@ -11,7 +11,7 @@
     "especial": 1
   },
   {
-    "id": 2,
+    "id": "2",
     "nombre": "Adrianna Vineyard",
     "bodega": "Catena Zapata",
     "tipo": "Blanco",
@@ -22,7 +22,7 @@
     "especial": 1
   },
   {
-    "id": 3,
+    "id": "3",
     "nombre": "Nosotros",
     "bodega": "Susana Balbo",
     "tipo": "Tinto",
@@ -33,7 +33,7 @@
     "especial": 1
   },
   {
-    "id": 4,
+    "id": "4",
     "nombre": "Alma Mora",
     "bodega": "Finca Las Moras",
     "tipo": "Tinto",
@@ -44,7 +44,7 @@
     "especial": 1
   },
   {
-    "id": 5,
+    "id": "5",
     "nombre": "Rutini",
     "bodega": "La Rural",
     "tipo": "Tinto",
@@ -55,7 +55,7 @@
     "especial": 1
   },
   {
-    "id": 6,
+    "id": "6",
     "nombre": "Latitud 33°",
     "bodega": "33°",
     "tipo": "Tinto",
@@ -66,7 +66,7 @@
     "especial": 1
   },
   {
-    "id": 7,
+    "id": "7",
     "nombre": "Los Haroldos",
     "bodega": "Haroldos",
     "tipo": "Tinto",
@@ -77,7 +77,7 @@
     "especial": 0
   },
   {
-    "id": 8,
+    "id": "8",
     "nombre": "Etchart Privado",
     "bodega": "Etchart",
     "tipo": "Blanco",
@@ -88,7 +88,7 @@
     "especial": 0
   },
   {
-    "id": 9,
+    "id": "9",
     "nombre": "Trumpeter",
     "bodega": "La Rural",
     "tipo": "Tinto",
@@ -99,11 +99,11 @@
     "especial": 0
   },
   {
-    "id": 10,
-    "nombre": "Don Valentin Lacrado",
+    "id": "10",
+    "nombre": "Don Valentin",
     "bodega": "Bianchi",
     "tipo": "Tinto",
-    "variedad": "Malbec",
+    "variedad": "Malbec Lacrado",
     "año": "2020",
     "precio": 1050,
     "img": "donvalentin.png",
