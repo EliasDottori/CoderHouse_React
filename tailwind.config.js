@@ -9,10 +9,15 @@ module.exports = {
         cart: "url(/public/images/cart.png)",
       },
       height: {
+        v100: "100vh",
+        v60: "60vh",
+        50: "50vh",
+        70: "70vh",
         90: "90%",
         10: "10%",
       },
       width: {
+        50: "50%",
         70: "70%",
         45: "45%",
         30: "30%",
@@ -21,6 +26,12 @@ module.exports = {
       },
       fontFamily: {
         gab: "Gabriola",
+      },
+      colors: {
+        superclaro: "#FDE8B8",
+        claro: "#C1BBAB",
+        oscuro: "#a98c74",
+        superoscuro: "#280000",
       },
     },
   },

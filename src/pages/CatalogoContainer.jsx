@@ -7,7 +7,7 @@ const CatalogoContainer = () => {
     const { id } = useParams();
 
     return (
-        <div className="h-full w-full bg-yellow-200 bg-cover bg-fixed bg-center bg-no-repeat">
+        <div className="h-full w-full  bg-superclaro">
           
             <CatalogoEspecial idCategoria={id}/>
           </div>

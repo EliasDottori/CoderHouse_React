@@ -1,35 +1,48 @@
 import React from "react";
 import Vino from "../components/Vino";
 import { useState, useEffect } from "react";
+import { db } from "../services/config";
+import { collection, getDocs, query } from "firebase/firestore";
 
-const CatalogoEspecial = (idCategoria) => {
+const CatalogoEspecial = (idParam) => {
+
+  let id = idParam.idCategoria
+
   const [isLoading, setIsLoading] = useState(true);
+
+  // const autoScroll = () => {
+  //   const element = document.getElementById("scrollObjetivo");
+  //   element.scrollIntoView({ behavior: "smooth" });
+  // };
 
   const [vinos, setVinos] = useState([]);
 
-  const autoScroll = () => {
-    const element = document.getElementById("scrollObjetivo");
-    element.scrollIntoView({ behavior: "smooth" });
-  };
+ console.log(id)
 
   useEffect(() => {
+    const vinos = query(collection(db, "products"));
+
     setTimeout(() => {
-      fetch("/data/vino.json")
-        .then((respuesta) => respuesta.json())
-        .then((datosJson) => {
-          setVinos(datosJson);
-          setIsLoading(false);
-          autoScroll();
+      getDocs(vinos)
+        .then((res) => {
+          const nuevosProductos = res.docs.map((doc) => {
+            const data = doc.data();
+            return { id: doc.id, ...data };
+          });
+          setVinos(nuevosProductos);
         })
         .catch((error) => console.log(error));
+
+      setIsLoading(false);
+      // autoScroll();
     }, 2000);
-  }, []);
+  }, [id]);
 
   if (isLoading) {
     return (
       <div
         id="scrollObjetivo"
-        className="flex h-32 items-center justify-center bg-yellow-200"
+        className="flex h-32 items-center justify-center bg-superclaro"
       >
         <div className="h-8 w-8 animate-spin rounded-full border-4 border-blue-200"></div>
         <p className="ml-2">Cargando...</p>
@@ -37,13 +50,26 @@ const CatalogoEspecial = (idCategoria) => {
     );
   }
 
-  console.log(idCategoria);
-  switch (idCategoria) {
-    case "1":
-      return (
+  if (id === "1") {
+    return (
         <div
           id="scrollObjetivo"
-          className="mx-auto flex h-auto w-full flex-wrap justify-around  bg-yellow-200"
+          className="mx-auto flex h-auto w-full flex-wrap justify-around"
+        >
+          {vinos
+            .filter((vinos) => vinos.especial === 1)
+            .map((vinosFiltered) => (
+              <Vino key={vinosFiltered.id} vino={vinosFiltered} />
+            ))}
+        </div>
+    );
+  }
+
+  if (id === "2") {
+    return (
+        <div
+          id="scrollObjetivo"
+          className="mx-auto flex h-auto w-full flex-wrap justify-around "
         >
           {vinos
             .filter((vinos) => vinos.especial < 1)
@@ -51,44 +77,7 @@ const CatalogoEspecial = (idCategoria) => {
               <Vino key={vinosFiltered.id} vino={vinosFiltered} />
             ))}
         </div>
-      );
-    case "2":
-      return (
-        <div
-          id="scrollObjetivo"
-          className="mx-auto flex h-auto w-full flex-wrap justify-around  bg-yellow-200"
-        >
-          {vinos
-            .filter((vinos) => vinos.tipo === "tinto")
-            .map((vinosFiltered) => (
-              <Vino key={vinosFiltered.id} vino={vinosFiltered} />
-            ))}
-        </div>
-      );
-    case "3":
-      return (
-        <div
-          id="scrollObjetivo2"
-          className="mx-auto flex h-auto w-full flex-wrap justify-around  bg-yellow-200"
-        >
-          {vinos
-            .filter((vinos) => vinos.tipo === "blanco")
-            .map((vinosFiltered) => (
-              <Vino key={vinosFiltered.id} vino={vinosFiltered} />
-            ))}
-        </div>
-      );
-    default:
-      return (
-        <div
-          id="scrollObjetivo3"
-          className="mx-auto flex h-auto w-85 flex-wrap justify-around"
-        >
-          {vinos.map((vinos) => (
-            <Vino key={vinos.id} vino={vinos} />
-          ))}
-        </div>
-      );
+    );
   }
 };
 

@@ -17,19 +17,14 @@ const VinoDetalleContainer = () => {
     
   }, []);
 
-  console.log(vinos)
-
   return (
-    <div className="  h-full w-full bg-yellow-200">
-      <div className=" h-full w-full ">
+      <div className=" h-v100 w-full bg-superclaro">
       {vinos
           .filter((vinos) => vinos.id === id)
           .map((vinosFiltered) => (
             <DetalleVino key={id} {...vinosFiltered} />
           ))}
       </div>
-      
-    </div>
   );
 };
 
