@@ -265,53 +265,8 @@ const Checkout = () => {
         ))}
           <div >
             
-            <div class="relative">
-              <ul class="space-y-5">
-                <li class="flex justify-between">
-                  <div class="inline-flex">
-                    <img
-                      src="https://images.unsplash.com/photo-1620331311520-246422fd82f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGhhaXIlMjBkcnllcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
-                      alt=""
-                      class="max-h-16"
-                    />
-                    <div class="ml-3">
-                      <p class="text-base font-semibold text-white">
-                        Nano Titanium Hair Dryer
-                      </p>
-                      <p class="text-sm font-medium text-white text-opacity-80">
-                        Pdf, doc Kindle
-                      </p>
-                    </div>
-                  </div>
-                  <p class="text-sm font-semibold text-white">$260.00</p>
-                </li>
-                <li class="flex justify-between">
-                  <div class="inline-flex">
-                    <img
-                      src="https://images.unsplash.com/photo-1621607512214-68297480165e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjV8fGhhaXIlMjBkcnllcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
-                      alt=""
-                      class="max-h-16"
-                    />
-                    <div class="ml-3">
-                      <p class="text-base font-semibold text-white">
-                        Luisia H35
-                      </p>
-                      <p class="text-sm font-medium text-white text-opacity-80">
-                        Hair Dryer
-                      </p>
-                    </div>
-                  </div>
-                  <p class="text-sm font-semibold text-white">$350.00</p>
-                </li>
-              </ul>
-              <div class="my-5 h-0.5 w-full bg-white bg-opacity-30"></div>
-              <div class="space-y-2">
-                <p class="flex justify-between text-lg font-bold text-white">
-                  <span>Total price:</span>
-                  <span>$510.00</span>
-                </p>
-              </div>
-            </div>
+            
+            
           </div>
         </div>
       </div>
