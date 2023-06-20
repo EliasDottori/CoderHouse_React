@@ -6,10 +6,10 @@ const CartItem = ({ item, cantidad }) => {
   const image = `/images/wine/${item.img}`;
   const precioTotalItem = item.precio * cantidad;
   return (
-    <div className="w-100 mx-14 box-border flex h-32 border-b-2 border-superoscuro">
+    <div key={item.id} className="w-100 mx-14 box-border flex h-32 border-b-2 border-superoscuro mt-20">
       <div className="flex h-full w-30 items-end justify-center">
         <img
-          className="duration-400 relative flex h-32  items-center justify-center transition-all ease-linear"
+          className="duration-400 relative flex h-48  items-center justify-center transition-all ease-linear"
           src={image}
           alt="vino"
         />

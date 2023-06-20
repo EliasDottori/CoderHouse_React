@@ -30,7 +30,6 @@ export const CartProvider = ({ children }) => {
       setCart(cartActualizado);
       setCantTotal((prev) => prev + cantidad);
       setTotal((prev) => prev + item.precio * cantidad);
-      console.log(cartActualizado)
     }
   };
 

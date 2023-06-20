@@ -4,7 +4,6 @@ import { db } from "../services/config";
 import { collection, addDoc, updateDoc, doc, getDoc } from "firebase/firestore";
 
 const Checkout = () => {
-    
   const { cart, deleteCart, total } = useContext(CartContext);
   const [nombre, setNombre] = useState("");
   const [apellido, setApellido] = useState("");
@@ -38,7 +37,7 @@ const Checkout = () => {
         id: vino.item.id,
         nombre: vino.item.nombre,
         cantidad: vino.cantidad,
-        img: vino.img
+        img: vino.img,
       })),
       total: cart.reduce(
         (total, vino) => total + vino.item.precio * vino.cantidad,
@@ -51,7 +50,6 @@ const Checkout = () => {
       fecha: new Date(),
     };
 
-    
     //Vamos a modificar el código para que ejecute varias promesas en paralelo, por un lado que actualice el stock de productos y por otro que genere una orden de compras. Promise.All me permite esto:
 
     Promise.all(
@@ -89,69 +87,22 @@ const Checkout = () => {
 
   return (
     <div>
-      <h2>Checkout</h2>
-      <form className="formulario">
-        
-        <p>Total Compra: ${total} </p>
-        <hr />
-
-        <div className="form-group">
-          <label htmlFor=""> Nombre </label>
-          <input
-            
-          />
-        </div>
-
-        <div className="form-group">
-          <label htmlFor=""> Apellido </label>
-          <input
-            
-          />
-        </div>
-
-        <div className="form-group">
-          <label htmlFor=""> Telefono </label>
-          <input
-            type="text"
-            value={telefono}
-            onChange={(e) => setTelefono(e.target.value)}
-          />
-        </div>
-
-        <div className="form-group">
-          <label htmlFor=""> Email </label>
-          <input
-            
-          />
-        </div>
-
-        <div className="form-group">
-          <label htmlFor=""> Email Confirmación </label>
-          <input
-            
-          />
-        </div>
-
-        {error && <p style={{ color: "red" }}> {error} </p>}
-        <button className="miBtn" type="submit">
-          {" "}
-          Finalizar Compra{" "}
-        </button>
-      </form>
-      
-      <div class="relative mx-auto w-full bg-superclaro" onSubmit={manejadorFormulario}>
-        <div class="grid min-h-screen grid-cols-10">
-          <div class="col-span-full px-4 py-6 sm:py-12 lg:col-span-6 lg:py-24">
-            <div class="mx-auto w-full max-w-lg">
-              <h1 class="relative text-2xl font-medium text-gray-700 sm:text-3xl">
+      <div
+        className="relative mx-auto w-full bg-superclaro"
+        onSubmit={manejadorFormulario}
+      >
+        <div className="grid min-h-screen grid-cols-10">
+          <div className="col-span-full px-4 py-6 sm:py-12 lg:col-span-6 lg:py-24">
+            <div className="mx-auto w-full max-w-lg">
+              <h1 className="relative text-2xl font-medium text-gray-700 sm:text-3xl">
                 Finalizar Compra
-                <span class="mt-2 block h-1 w-10 bg-superoscuro sm:w-20"></span>
+                <span className="mt-2 block h-1 w-10 bg-superoscuro sm:w-20"></span>
               </h1>
-              <form action="" class="mt-10 flex flex-col space-y-4">
+              <form action="" className="mt-10 flex flex-col space-y-4">
                 <div>
                   <label
-                    for="nombre"
-                    class="text-xs font-semibold text-gray-500"
+                    htmlFor="nombre"
+                    className="text-xs font-semibold text-gray-500"
                   >
                     Nombre
                   </label>
@@ -160,13 +111,13 @@ const Checkout = () => {
                     value={nombre}
                     onChange={(e) => setNombre(e.target.value)}
                     placeholder="Nombre"
-                    class="mt-1 block w-full rounded border-gray-300 bg-gray-50 px-4 py-3 text-sm placeholder-gray-300 shadow-sm outline-none transition focus:ring-2 focus:ring-teal-500"
+                    className="mt-1 block w-full rounded border-gray-300 bg-gray-50 px-4 py-3 text-sm placeholder-gray-300 shadow-sm outline-none transition focus:ring-2 focus:ring-teal-500"
                   />
                 </div>
                 <div>
                   <label
-                    for="apellido"
-                    class="text-xs font-semibold text-gray-500"
+                    htmlFor="apellido"
+                    className="text-xs font-semibold text-gray-500"
                   >
                     Apellido
                   </label>
@@ -175,13 +126,13 @@ const Checkout = () => {
                     value={apellido}
                     onChange={(e) => setApellido(e.target.value)}
                     placeholder="Apellido"
-                    class="mt-1 block w-full rounded border-gray-300 bg-gray-50 px-4 py-3 text-sm placeholder-gray-300 shadow-sm outline-none transition focus:ring-2 focus:ring-teal-500"
+                    className="mt-1 block w-full rounded border-gray-300 bg-gray-50 px-4 py-3 text-sm placeholder-gray-300 shadow-sm outline-none transition focus:ring-2 focus:ring-teal-500"
                   />
                 </div>
                 <div>
                   <label
-                    for="email"
-                    class="text-xs font-semibold text-gray-500"
+                    htmlFor="email"
+                    className="text-xs font-semibold text-gray-500"
                   >
                     Email
                   </label>
@@ -190,13 +141,13 @@ const Checkout = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="john.capler@fang.com"
-                    class="mt-1 block w-full rounded border-gray-300 bg-gray-50 px-4 py-3 text-sm placeholder-gray-300 shadow-sm outline-none transition focus:ring-2 focus:ring-teal-500"
+                    className="mt-1 block w-full rounded border-gray-300 bg-gray-50 px-4 py-3 text-sm placeholder-gray-300 shadow-sm outline-none transition focus:ring-2 focus:ring-teal-500"
                   />
                 </div>
                 <div>
                   <label
-                    for="email"
-                    class="text-xs font-semibold text-gray-500"
+                    htmlFor="email"
+                    className="text-xs font-semibold text-gray-500"
                   >
                     Confirmar Email
                   </label>
@@ -205,13 +156,13 @@ const Checkout = () => {
                     value={emailConfirmacion}
                     onChange={(e) => setEmailConfirmacion(e.target.value)}
                     placeholder="john.capler@fang.com"
-                    class="mt-1 block w-full rounded border-gray-300 bg-gray-50 px-4 py-3 text-sm placeholder-gray-300 shadow-sm outline-none transition focus:ring-2 focus:ring-teal-500"
+                    className="mt-1 block w-full rounded border-gray-300 bg-gray-50 px-4 py-3 text-sm placeholder-gray-300 shadow-sm outline-none transition focus:ring-2 focus:ring-teal-500"
                   />
                 </div>
-                <div class="relative">
+                <div className="relative">
                   <label
-                    for="card-number"
-                    class="text-xs font-semibold text-gray-500"
+                    htmlFor="card-number"
+                    className="text-xs font-semibold text-gray-500"
                   >
                     Telefono
                   </label>
@@ -220,53 +171,67 @@ const Checkout = () => {
                     value={telefono}
                     onChange={(e) => setTelefono(e.target.value)}
                     placeholder="+ 54 xx xxxx xxxx"
-                    class="block w-full rounded border-gray-300 bg-gray-50 px-4 py-3 pr-10 text-sm placeholder-gray-300 shadow-sm outline-none transition focus:ring-2 focus:ring-teal-500"
+                    className="block w-full rounded border-gray-300 bg-gray-50 px-4 py-3 pr-10 text-sm placeholder-gray-300 shadow-sm outline-none transition focus:ring-2 focus:ring-teal-500"
                   />
                   <img
                     src="/images/uQUFIfCYVYcLK0qVJF5Yw.png"
                     alt=""
-                    class="absolute bottom-3 right-3 max-h-4"
+                    className="absolute bottom-3 right-3 max-h-4"
                   />
                 </div>
-
-                
               </form>
+              {error && <p style={{ color: "red" }}> {error} </p>}
               <button
                 type="submit"
-                class="mt-4 inline-flex w-full items-center justify-center rounded bg-claro px-4 py-2.5 text-base font-semibold tracking-wide text-white text-opacity-80 outline-none ring-offset-2 transition hover:text-opacity-100 focus:ring-2 focus:ring-superoscuro sm:text-lg"
+                className="mt-4 inline-flex w-full items-center justify-center rounded bg-claro px-4 py-2.5 text-base font-semibold tracking-wide text-white text-opacity-80 outline-none ring-offset-2 transition hover:text-opacity-100 focus:ring-2 focus:ring-superoscuro sm:text-lg"
               >
                 Confirmar Compra
               </button>
               {ordenId && (
-        <strong className="ordenId">
-          ¡Gracias por tu compra! Tu número de Orden es {ordenId}{" "}
-        </strong>
-        
-      )}
+                <strong className="ordenId">
+                  ¡Gracias por tu compra! Tu número de Orden es {ordenId}{" "}
+                </strong>
+              )}
             </div>
           </div>
 
-          {cart.map((producto) => (
-          <div key={producto.item.id} class="relative col-span-full flex flex-col py-6 pl-8 pr-4 sm:py-12 lg:col-span-4 lg:py-24">
-            <div>
-              <img
-                src=""
-                alt=""
-                class="absolute inset-0 h-full w-full object-cover"
-              />
-              <div class="absolute inset-0 h-full w-full bg-gradient-to-t from-teal-800 to-teal-400 opacity-95"></div>
+          <div className="relative col-span-full mt-20 flex flex-col bg-claro py-6 pl-8 pr-4 sm:py-12 lg:col-span-4 lg:py-20">
+            <div className="relative">
+              {cart.map((producto) => (
+                <ul className=" mt-16 box-border h-20 " key={producto.item.id}>
+                  <li className="flex justify-between h-20">
+                    <div className="inline-flex">
+                      <div className="w-32 flex justify-center h-full items-end ">
+                        <img
+                          src={`/images/wine/${producto.item.img}`}
+                          alt=""
+                          className="h-32"
+                        />
+                      </div>
+
+                      <div className="ml-3">
+                        <p className="text-base font-semibold text-superoscuro">
+                          {producto.item.nombre}
+                        </p>
+                        <p className="text-sm font-medium text-superoscuro text-opacity-80">
+                          {producto.cantidad}
+                        </p>
+                      </div>
+                    </div>
+                    <p className="text-sm font-semibold text-superoscuro">
+                      $ {producto.item.precio}
+                    </p>
+                  </li>
+                </ul>
+              ))}
+              <div className="my-5 h-0.5 w-full bg-superoscuro bg-opacity-30"></div>
+              <div className="space-y-2">
+                <p className="flex justify-between text-lg font-bold text-superoscuro">
+                  <span>Total a Pagar</span>
+                  <span>$ {total}</span>
+                </p>
+              </div>
             </div>
-            <p>
-              {producto.item.nombre} x {producto.cantidad}
-            </p>
-            <p> Precio $: {producto.item.precio} </p>
-            <hr />
-          </div>
-        ))}
-          <div >
-            
-            
-            
           </div>
         </div>
       </div>

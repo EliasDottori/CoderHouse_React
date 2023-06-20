@@ -33,6 +33,9 @@ module.exports = {
         oscuro: "#a98c74",
         superoscuro: "#280000",
       },
+      borderWidth: {
+        1: "0.5px",
+      },
     },
   },
   plugins: [],

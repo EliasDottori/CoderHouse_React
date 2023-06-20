@@ -21,13 +21,13 @@ const Cart = () => {
     );
   }
   return (
-    <div className="w-100  flex h-v100 justify-around bg-superclaro  pt-48 ">
-      <div className="w-70 box-border overflow-hidden">
+    <div className="w-100  flex h-v100 justify-around bg-superclaro  pt-36 ">
+      <div className="w-70 ">
         {cart.map((producto) => (
           <CartItem key={producto.id} {...producto} />
         ))}
       </div>
-      <div className="w-30 h-full flex flex-col items-center justify-around">
+      <div className="w-30 h-full flex flex-col items-center justify-around bg-claro">
       <h3 >Total de la Compra: ${total} </h3>
       <h3>Cantidad de Productos: {cantTotal} </h3>
       <button className="cursor-pointer h-12  w-32 rounded border border-black bg-orange-200 p-1 active:bg-orange-300" onClick={() => vaciarCart()}>

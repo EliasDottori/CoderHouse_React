@@ -4,7 +4,6 @@ import Home from "./pages/Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import VinoDetalle from "./components/VinoDetalleContainer";
 import Cart from "./components/Cart";
-// import CatalogoEspecial from "./pages/CatalogoEspecial";
 import CatalogoContainer from "./pages/CatalogoContainer";
 import { CartProvider } from './context/CartContext';
 import Checkout from "./components/Checkout";

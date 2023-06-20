@@ -12,8 +12,6 @@ const VinoBodega = (bodega1) => {
 
   useEffect(() => {
     const vinos = query(collection(db, "products"));
-
-    setTimeout(() => {
       getDocs(vinos)
         .then((res) => {
           const nuevosProductos = res.docs.map((doc) => {
@@ -23,7 +21,6 @@ const VinoBodega = (bodega1) => {
           setVinos(nuevosProductos);
         })
         .catch((error) => console.log(error));
-    }, 2000);
   }, []);
 
   return (

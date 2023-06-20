@@ -2,6 +2,8 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import DetalleVino from "./DetalleVino";
+import { db } from "../services/config";
+import { collection, getDocs, query } from "firebase/firestore";
 
 const VinoDetalleContainer = () => {
   const { id } = useParams();
@@ -10,11 +12,16 @@ const VinoDetalleContainer = () => {
 
 
   useEffect(() => {
-      fetch("/data/vino.json")
-        .then((respuesta) => respuesta.json())
-        .then((datosJson) => setVinos(datosJson))
+    const vinos = query(collection(db, "products"));
+      getDocs(vinos)
+        .then((res) => {
+          const nuevosProductos = res.docs.map((doc) => {
+            const data = doc.data();
+            return { id: doc.id, ...data };
+          });
+          setVinos(nuevosProductos);
+        })
         .catch((error) => console.log(error));
-    
   }, []);
 
   return (
