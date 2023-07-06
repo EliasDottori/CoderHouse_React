@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const VinoEspecial = (vinos) => {
-  const { id, nombre, bodega, variedad, tipo, precio, img } = vinos.vino;
+  const { id, nombre, bodega, variedad, tipo, precio, img, detail } = vinos.vino;
 
   const image = `/images/wine/${img}`;
   return (
@@ -23,10 +23,7 @@ const VinoEspecial = (vinos) => {
         flex w-full flex-col items-center justify-center gap-4 transition-all ease-linear"
         >
           <p className="text-xs text-superclaro">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore
-            magni tenetur consectetur, voluptatibus quis ullam autem enim
-            corrupti natus sed veritatis ad ex nesciunt nostrum architecto dicta
-            sit unde nemo.
+          {detail}
           </p>
 
           <div className="flex w-full flex-row justify-around">

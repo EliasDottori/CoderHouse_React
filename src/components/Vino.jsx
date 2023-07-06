@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Vino = (props) => {
 
-  const { id, nombre, tipo, precio, img, bodega, variedad } = props.vino;
+  const { id, nombre, tipo, precio, img, bodega, variedad, detail } = props.vino;
 
   const image = `/images/wine/${img}`;
 
@@ -78,11 +78,8 @@ const Vino = (props) => {
           className="opacity-0 h-0 overflow-hidden flex flex-col 
         w-full items-center justify-center ml-4 gap-4 transition-all duration-400 ease-linear"
         >
-          <p className="text-black text-xs">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore
-            magni tenetur consectetur, voluptatibus quis ullam autem enim
-            corrupti natus sed veritatis ad ex nesciunt nostrum architecto dicta
-            sit unde nemo.
+          <p className="text-black text-xs pl-10">
+            {detail}
           </p>
 
           <div className="flex flex-row justify-around w-full">

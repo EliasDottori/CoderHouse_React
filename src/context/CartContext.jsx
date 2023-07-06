@@ -11,17 +11,17 @@ export const CartProvider = ({ children }) => {
   const [total, setTotal] = useState(0);
   const [cantTotal, setCantTotal] = useState(0);
 
-  const agregarVino = (item, cantidad, img) => {
+  const agregarVino = (vino, cantidad) => {
     
-    const vinoExist = cart.find((prod) => prod.item.id === item.id);
+    const vinoExist = cart.find((prod) => prod.vino.id === vino.id);
 
     if (!vinoExist) {
-      setCart((prev) => [...prev, { item, cantidad, img }]);
+      setCart((prev) => [...prev, { vino, cantidad}]);
       setCantTotal((prev) => prev + cantidad);
-      setTotal((prev) => prev + item.precio * cantidad);
+      setTotal((prev) => prev + vino.precio * cantidad);
     } else {
       const cartActualizado = cart.map((prod) => {
-        if (prod.item.id === item.id) {
+        if (prod.vino.id === vino.id) {
           return { ...prod, cant: prod.cant + cantidad };
         } else {
           return prod;
@@ -29,17 +29,17 @@ export const CartProvider = ({ children }) => {
       });
       setCart(cartActualizado);
       setCantTotal((prev) => prev + cantidad);
-      setTotal((prev) => prev + item.precio * cantidad);
+      setTotal((prev) => prev + vino.precio * cantidad);
     }
   };
 
 
   const deleteVino = (id) => {
-    const vinoDelete = cart.find((prod) => prod.item.id === id);
-    const cartActualizado = cart.filter((prod) => prod.item.id !== id);
+    const vinoDelete = cart.find((prod) => prod.vino.id === id);
+    const cartActualizado = cart.filter((prod) => prod.vino.id !== id);
     setCart(cartActualizado);
     setCantTotal((prev) => prev - vinoDelete.cantidad);
-    setTotal((prev) => prev - vinoDelete.item.precio * vinoDelete.cantidad);
+    setTotal((prev) => prev - vinoDelete.vino.precio * vinoDelete.cantidad);
   };
 
   const vaciarCart = () => {

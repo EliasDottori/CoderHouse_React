@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
+
 const CounterCant = ({ inicial, stock, funcionAgregar }) => {
   const [contador, setContador] = useState(inicial);
 

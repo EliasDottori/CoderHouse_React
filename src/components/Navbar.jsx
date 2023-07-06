@@ -1,8 +1,12 @@
 import React from "react";
 import CartWidget from "./CartWidget";
 import { NavLink, Link } from "react-router-dom";
+import "./StyleActive.css"
 
 const navbar = () => {
+
+
+
   return (
     <div>
       <nav
@@ -17,26 +21,26 @@ const navbar = () => {
         ></Link>
 
         <div className="flex h-full w-6/12 items-center justify-around">
-          <Link
+          <NavLink
             to="/Catalogo/1"
             className="border-fde3cd flex h-full w-64 
           items-center justify-center border-l-2 border-r-2 font-gab text-4xl text-black no-underline"
           >
             Catalogo Completo
-          </Link>
+          </NavLink>
 
-          <Link
+          <NavLink
             to="/Catalogo/2"
             className="border-fde3cd flex h-full w-64 
           items-center justify-center border-l-2 border-r-2 font-gab text-4xl text-black no-underline"
           >
             Vinos Tintos
-          </Link>
+          </NavLink>
 
           <NavLink
             to="/Catalogo/3"
-            className="border-superoscuro flex h-full w-64 bg-superclaro items-center justify-center border-l-2 border-r-2 font-gab text-4xl text-black no-underline"
-            activeClassName="bg-superclaro"
+            className="border-fde3cd flex h-full w-64 items-center justify-center border-l-2 border-r-2 font-gab text-4xl text-black no-underline"
+            
           >
             Vinos Blancos
           </NavLink>

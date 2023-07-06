@@ -15,21 +15,19 @@ const Catalogo = (idParam) => {
     const vinos = query(collection(db, "products"));
     getDocs(vinos)
       .then((res) => {
-        const nuevosProductos = res.docs.map((doc) => {
+        const nuevosVinos = res.docs.map((doc) => {
           const data = doc.data();
           return { id: doc.id, ...data };
         });
-        setVinos(nuevosProductos);
+        setVinos(nuevosVinos);
         setIsLoading(false);
       })
       .catch((error) => console.log(error));
-    
   }, [id]);
 
   if (isLoading) {
     return (
       <div
-        id="scrollObjetivo"
         className="flex h-v100 items-center justify-center bg-superclaro pt-40"
       >
         <div className="h-8 w-8 animate-spin rounded-full border-4 border-blue-200"></div>
@@ -41,12 +39,11 @@ const Catalogo = (idParam) => {
   if (id === "1") {
     return (
       <div
-        id="scrollObjetivo"
         className="min-h-v100 min-h-v100 mx-auto flex h-auto w-full flex-wrap justify-around pt-40"
       >
-        {vinos.map((vinosFiltered) => (
-          <Vino key={vinosFiltered.id} vino={vinosFiltered} />
-        ))}
+        {vinos.map((vinosFiltered) => {
+          return <Vino key={vinosFiltered.id} vino={vinosFiltered} />;
+        })}
       </div>
     );
   }
@@ -54,7 +51,6 @@ const Catalogo = (idParam) => {
   if (id === "2") {
     return (
       <div
-        id="scrollObjetivo"
         className="min-h-v100 mx-auto  flex h-auto w-full flex-wrap justify-around pt-40 "
       >
         {vinos
@@ -69,7 +65,6 @@ const Catalogo = (idParam) => {
   if (id === "3") {
     return (
       <div
-        id="scrollObjetivo"
         className="min-h-v100 mx-auto flex h-auto w-full flex-wrap justify-around pt-40 "
       >
         {vinos

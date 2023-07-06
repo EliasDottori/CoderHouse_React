@@ -2,16 +2,24 @@ import React from "react";
 import CounterCant from "./CounterCant";
 import { CartContext } from "../context/CartContext";
 import { useContext } from "react";
+import Swal from 'sweetalert2';
 
-const DetalleVino = ({ id, nombre, tipo, bodega, variedad, precio, img }) => {
+
+const DetalleVino = ({ id, nombre, tipo, bodega, variedad, precio, img, stock }) => {
   const image = `/images/wine/${img}`;
-  const stock = 17;
 
   const { agregarVino } = useContext(CartContext);
 
   const handleCant = (cantidad) => {
-    const item = { id, nombre, precio, img };
-    agregarVino(item, cantidad);
+    const vino = { id, nombre, precio, img };
+    agregarVino(vino, cantidad);
+    Swal.fire({
+      title: 'Agregado al Carrito!',
+      text:  ` El vino ${vino.nombre} fue agregado correctamente al carrito` ,
+      icon: 'success',
+      confirmButtonText: 'Cool',
+      background: "#FDE8B8",
+    })
   };
 
   return (
@@ -35,7 +43,10 @@ const DetalleVino = ({ id, nombre, tipo, bodega, variedad, precio, img }) => {
           </p>
         </div>
         <div className=" text-3xl">$ {precio}</div>
-
+        <p className="text-gray-700">
+            Stock Disponible:{" "}
+            <span className="text-2xl not-italic text-black">{stock} Unidades</span>
+          </p>
         <CounterCant inicial={1} stock={stock} funcionAgregar={handleCant} />
       </div>
       <div className="h-100 flex w-96 justify-center border-2 border-solid border-superoscuro py-3">
